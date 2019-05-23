@@ -1,0 +1,26 @@
+*{margin:0;padding:0}
+  /*Ò³ÃæÍ·²¿*/
+#header_top{
+    width:100%;
+    height: 36px;
+    background:#333333;
+}
+#header_top .header_ct{
+    width:1090px;
+    height: 36px;
+    margin:0 auto;
+    background: white;
+    position:relative;
+    vertical-align: middle;
+}
+#header_top .header_ct .head_ct_left{
+    vertical-align: middle;
+}
+#header_top .header_ct .head_ct_left i{
+    display:inline-block;
+    width:26px;
+    height:26px;
+    box-sizing:border-box;
+    background:url(bg.png) 0px -175px;
+
+}
