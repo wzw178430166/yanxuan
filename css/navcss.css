@@ -1,0 +1,224 @@
+img{
+     border:none; 	
+	}
+/*去除ie 单行文本框删除按钮*/
+::-ms-clear{display: none;}
+::-ms-reveal{display: none;}
+::-o-clear{display: none;}
+/*头部*/
+#hearder {
+	height: 36px;
+	width: 1088px;
+	margin: 0 auto;
+	position: relative;
+	line-height: 36px;
+}
+#hearder .hearder_left .hearder_live {
+	height: 36px;
+	width: 130px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	line-height: 36px;
+}
+#hearder .hearder_left .hearder_live a {
+	color: #ccc;
+}
+#hearder .hearder_left {
+	height: 36px;
+	width: 520px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#hearder .hearder_right {
+	height: 36px;
+	width: 500px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#hearder .hearder_left .hearder_news {
+	height: 36px;
+	width: 320px;
+	position: absolute;
+	left: 125px;
+	top: 0px;
+	line-height: 36px;
+}
+#hearder .hearder_left .hearder_news .hearder_img {
+	background-image: url(../message/d132c2561f18f1149d566a60d05fd9b7.gif);
+	background-repeat: no-repeat;
+	height: 36px;
+	width: 15px;
+	display: inline-block;
+	background-position: center;
+}
+.wramp_hearder {
+	background-color: #333;
+	height: 36px;
+	width: 100%;
+	position: relative;
+	top: 0px;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+#hearder_boxs {
+	height: 36px;
+	width: 300px;
+	position: relative;
+	left: 30px;
+	top: -50px;
+	overflow: hidden;
+}
+#hearder_boxs .hearder_message{
+	width: 300px;
+}
+#hearder_boxs .hearder_message li{
+	height: 36px;
+	width: 300px;
+	display:block;
+}
+.wramp_hearder #hearder .hearder_left .hearder_news .hearder_message li a {
+	color: #b4a078;
+	text-decoration: underline;
+	height:36px;
+	display:inline-block;
+	line-height:36px;
+	width:300px;
+}
+.wramp_hearder #hearder .hearder_left .hearder_news .hearder_message li a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul {
+	height: 36px;
+	width: 500px;
+	position: relative;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul li {
+	float: left;
+	position: relative;
+	line-height: 36px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul li a {
+	color: #ccc;
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 36px;
+	height: 36px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_line {
+	background-color: #545454;
+	height: 20px;
+	width: 1px;
+	margin-top: 8px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul li .inte {
+	display: block;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	background-image: url(../message/ui-icons_777777_256x240.png);
+	background-repeat: no-repeat;
+	background-position: 3px 2px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li {
+	padding-right: 15px;
+	position:relative;
+}
+#hearder .hearder_right .hearder_right_ul li a:hover {
+	color: #FFFFFF;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul li:hover .inte{
+	background-image: url(../message/ui-icons_777777_256x240.png);
+	background-repeat: no-repeat;
+	background-position: -60px 2px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul li .inte_app {
+	display: block;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 8px;
+	left: 2px;
+	background-image: url(../message/bgimg.png);
+	background-repeat: no-repeat;
+	background-position: 7px 4px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_app {
+	padding-left: 15px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li .hearder_show_message {
+	display: block;
+	width: 75px;
+	position: absolute;
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	background-color: #FFF;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li .hearder_show_message  a:hover {
+	color: #b4a078;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li .hearder_show_message li a {
+	display: inline-block;
+	width: 55px;
+	text-align: center;
+	/* [disabled]padding-top: 5px; */
+	/* [disabled]padding-bottom: 5px; */
+	margin: 0 auto;
+	color: #999;
+	height: 40px;
+	line-height: 40px;
+}
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li .hearder_show_message li {
+	width: 75px;
+	position: relative;
+}
+
+.wramp_hearder #hearder .hearder_right .hearder_right_ul .hearder_right_li .hearder_show_message .hearder_right_linetwo a {
+	background-color: #CCC;
+	height: 1px;
+	width: 60px;
+	margin: 0 auto;
+	display: block;
+	padding: 0px;
+}
+.hearder_warrper .hearder_show_bg {
+	height: 7px;
+	width: 75px;
+}
+.hearder_warrper .hearder_show_bg .hearder_show_span {
+	display: block;
+	width: 12px;
+	height: 7px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image: url(../message/bgimg.png);
+	background-position: 0px -390px;
+}
+
+
+.wramp_hearder #hearder .hearder_right .hearder_right_ul  .hearder_warrper {
+	display: none;
+	width: 75px;
+	position: absolute;
+	top: 30px;
+	z-index: 15;
+}
