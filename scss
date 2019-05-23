@@ -1,0 +1,120 @@
+$tyoe:moon;
+div{
+   @if($tyoe==sun){
+     color:red;
+   } @else if($tyoe==moon){
+     color:blue;
+   }@else{
+     color:yellow;
+   }
+}
+
+
+@function get-width($nsa){
+  $num1:60;
+  $num2:70;
+  @return $nsa*max($num1,$num2)+$nsa* min($num1,$num2);
+}
+
+div{
+  width:get-width(2)+px;
+}
+
+
+@function get_msg($a,$b){
+  @return $a*$b+($a/$b);
+}
+div{
+  width:get_msg(3,2)+px;
+}
+
+
+@mixin my_bgk($to){
+  background: -webkit-linear-gradient($to,#4e555b,#002752);
+}
+$bottoms:"bottom";
+div{
+  @include my_bgk(unquote($bottoms));
+}
+
+div:before{
+  content:unquote("abc");
+}
+div{
+  width:round(4.7px);
+}
+
+$my-widhts:5%;
+$my-max-width:$my-widhts*2;
+$other-width:$my-widhts+$my-max-width;
+#d1{
+  width:$other-width;
+}
+
+
+p:after{
+  content: "liang liang ate #{50+21} boazis";
+}
+
+
+h1{
+  font-size:10px/5px;
+  $w:1000px;
+  width:$w/2;
+  height: (500px/2);
+  margin-left: 5px+8px/2px;
+}
+
+$my-w:100px;
+$my-h:10px;
+div{
+  width:$my-w - $my-h;
+}
+
+
+$my_width:1520px;
+$jd-red:#000;
+$before-conent:"zi shaid";
+$my_border:1px solid red;
+$my_color:$jd-red;
+$my_border:10px solid blue !default;
+#d1{
+  border:1px solid $my_color;
+  $my_size:123px;
+  width: $my_size;
+}
+#d2{
+  content: $before-conent;
+  border:$my_border;
+}
+
+#content{
+    width:$my_width;
+    div.top{
+      border:1px solid $jd-red;
+      h1{border: $my_border;}
+      p{color: $my_color;}
+    };
+    div.bottom{color:$jd-red};
+}
+
+a{
+  width:20px;
+  &:hover{width:200px;}
+}
+
+div,h1,footer,p{
+  a{color:red;}
+}
+
+#main{
+  width:200px;
+  height: 200px;
+  background: red;
+  transition:all 1s;
+  transition:{property: all;duration: 2s;timing-function: line;}
+  &:hover{
+    background: yellow;
+    border-radius:50%;
+  }
+}
