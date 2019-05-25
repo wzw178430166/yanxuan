@@ -1,4 +1,4 @@
-// 头部菜单文字滚动
+// 头部菜单文字滚动 
 $(function(){
 		$('#hearder_boxs').kxbdSuperMarquee({direction: 'up',distance:36,time:6,duration:40,scrollDelay:20,isEqual:true,loop: 0});
 	});
