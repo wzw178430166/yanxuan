@@ -1,7 +1,52 @@
-// 头部菜单文字滚动 
+  "use strict";
+  //用户登录
+  (function(){
+	  function fn(){
+		  var $uname=sign_num.value;
+		  var $upwd=u_pwd.value;
+		  //创建异步对象
+		  var xhr=new XMLHttpRequest();
+		  //4.接收响应 监听获取响应数据
+		  xhr.onreadystatechange=function(){
+			  if(xhr.readyState==4&&xhr.status==200){
+				  var result=xhr.responseText;
+				  alert(result);
+			  }
+		  };
+		  //2.打开连接，创建请求
+		  xhr.open("post","http://127.0.0.1:8080/user/login",true);
+		  //3.发送请求
+		  //3.1 创建请求主体
+		  var formdata="phone="+$uname+"&upwd="+$upwd;
+		  //3.2 设置请求消息头
+		  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		  xhr.send(formdata);
+	  }
+	 var user_btn=document.getElementById('user_btn');  //登录
+	  var u_pwd=document.getElementById('u_pwd'); //密码
+	  var sign_u=document.getElementById('sign_num'); //账号
+	  user_btn.onclick=fn;
+  }());
+
+//点击切换登录方式
 $(function(){
-		$('#hearder_boxs').kxbdSuperMarquee({direction: 'up',distance:36,time:6,duration:40,scrollDelay:20,isEqual:true,loop: 0});
-	});
+	$('#sign_yanzheng').click(function () {
+		var str='使用验证码登录';
+		if(this.innerHTML!=str) {
+			this.innerHTML =str;
+			$('.verify-wrap').eq(0).hide();
+			$('.sign_yanzhengma').eq(0).hide();
+			$('#log_in').show();
+		}else{
+			str='使用密码登陆';
+			this.innerHTML =str;
+			$('.verify-wrap').eq(0).show();
+			$('.sign_yanzhengma').eq(0).show();
+			$('#log_in').hide();
+		}
+	})
+})
+
 	//头部菜单切换二级菜单
 $(function(){
 	 $('.hearder_right_li').each(function(i,val){
@@ -32,7 +77,7 @@ $(function(){
 			   $('#searchInput_text').focus();
 			   }); 
 			   
-			  $('#searchInput_text').blur(function(){searchInputs
+			  $('#searchInput_text').blur(function(){//searchInputs
 				     var tempstq = $('#searchInput_text').val();
 				     if($.trim(tempstq)==0){
                 $('#searchInput_text').hide();
@@ -44,24 +89,7 @@ $(function(){
 				shanshan(gw_count);
 		 }());
 		 
-		 //首页菜单导航栏 + 浮动菜单栏   切换样式   
-		 $(function(){
-		 		 //菜单
-				  var nav_shouye=$('#nav_shouye').children('li');
-	     nav_shouye.hoverDelay(function(){
-			
-			 $(this).children('.subnav_yanxuan').stop(true,true).show();
-			 },function(){
-				  $(this).children('.subnav_yanxuan').stop(true,true).hide();
-				 });
-			 //浮动
-      var nav_ula=$('#nav_ula').children('li');
-	     nav_ula.hoverDelay(function(){
-			 $(this).children('.subnav_yanxuan').stop(true,true).show();
-			 },function(){
-				  $(this).children('.subnav_yanxuan').stop(true,true).hide();
-				 });
-			 })
+
 			 
 			 //轮播图
 			$(function () {
@@ -110,7 +138,26 @@ $(function(){
         }, function () {
     t = setInterval(move, 5500);
         })
-})	
+})
+
+  //首页菜单导航栏 + 浮动菜单栏   切换样式
+  $(function(){
+	  //菜单
+	  	  var nav_shouye=$('#nav_shouye').children('li');
+	   nav_shouye.hoverDelay(function(){
+
+	   $(this).children('.subnav_yanxuan').stop(true,true).show();
+	   },function(){
+	   $(this).children('.subnav_yanxuan').stop(true,true).hide();
+	   });
+	  //浮动
+	  var nav_ula=$('#nav_ula').children('li');
+	  nav_ula.hoverDelay(function(){
+		  $(this).children('.subnav_yanxuan').stop(true,true).show();
+	  },function(){
+		  $(this).children('.subnav_yanxuan').stop(true,true).hide();
+	  });
+  })
 
     //浮动菜单栏
      $(function(){
@@ -123,10 +170,8 @@ $(function(){
 					  nav_float_t.css({"display":"none"});
 					}
 			if(scrollTopY >=0&&scrollTopY >=250){
-				
-					nav_float_t.addClass('active').animate({height:"60px"},800);		
+					nav_float_t.addClass('active').animate({height:"60px"},800);
 			  nav_float_t.css({"display":"block"});
-			 
         }else{
 	nav_float_t.stop(true,true);
 	 nav_float_t.css({"display":"none","height":"0px"});
@@ -167,12 +212,12 @@ $(function(){
 		 });
 		 
 		 //品牌制造商       图片缩放
-		 var Brand=(function(){
-			 function Manufacture(width,height){
+           class Manufacture{
+             constructor(width,height){
 			 	this.widths=width;
 			 	this.heights=height;
-			 };
-			 Manufacture.prototype.move=function(objlist,classname){
+			 }
+			 move(objlist,classname){
 			 	var self=this;
 				 var objlist=window.getElementsByClassName(objlist);
 				  for(var i=0;i<objlist.length;i++){
@@ -190,14 +235,13 @@ $(function(){
 				    img.style.height=(self.heights)+'px';
 				  }
 			  }
-				 };
-			 return Manufacture;
-			 }())
-        
+				 }
+                  }
+
 		 $(function(){
-			 var obj1=new Brand('350','320');
+			 var obj1=new Manufacture('350','320');
 			 obj1.move('brand_dfjk','currency_transition');
-					 var obj2=new Brand('250','165');
+					 var obj2=new Manufacture('250','165');
 			 obj2.move('brand_topb','currency_transition');
 			 })
 
@@ -283,9 +327,9 @@ for(var i=0;i<menuli.length;i++){
 			}
 }
 		  //人气推荐图片缩放
-			 var obj1=new Brand('180','180');
+			 var obj1=new Manufacture('180','180');
 			 obj1.move('tab_right_conter','currency_transition');
-			 var obj2=new Brand('320','320');
+			 var obj2=new Manufacture('320','320');
 			 obj2.move('tab_left','currency_transition');
 			 
 		 // 文字加载效果
@@ -295,8 +339,8 @@ for(var i=0;i<menuli.length;i++){
   return setInterval(function flash(){
     var str = text.charAt(i);//获取改变样式的当前字符
     var strs = "<b>" + str + "</b>";//获取改变样式的当前字符
-    leftStr  = text.substr(0,i);//截取当前获取到的单个改变字符到第一个字符的内容
-    rightStr = text.substr(i+1,text.length-i);//截取获取剩下的字符串
+    var leftStr  = text.substr(0,i);//截取当前获取到的单个改变字符到第一个字符的内容
+    var rightStr = text.substr(i+1,text.length-i);//截取获取剩下的字符串
     obj.innerHTML = leftStr + strs + rightStr;//前面三个拼接在一起的字符串
     i++;//当前字符的样式不断改变
     if (i>=text.length)i=0; //循环
@@ -368,7 +412,7 @@ for(var i=0;i<menuli.length;i++){
 		 	var thisobj=new Intit();
 			 //  限时购  倒计时
              thisobj.getTime("reverse")//这里用来调用这个函数，传入id
-			 var obj1=new Brand('180','180');
+			 var obj1=new Manufacture('180','180');
 			 obj1.move('shoppings_nte','currency_transition');
 		 }())
      
@@ -473,7 +517,7 @@ for(var i=0;i<menuli.length;i++){
         return false;
       }else{
 		  $('#sign_xegta').hide();
-		  $('.sign_divst').css({"border":"none"});
+		  $('.sign_divst').css({"border-color":"#e8e8e8"});
 		  }
 				  })
 				  
